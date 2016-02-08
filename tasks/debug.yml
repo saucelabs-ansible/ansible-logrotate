@@ -1,0 +1,8 @@
+---
+
+- debug:
+    var="{{ item }}"
+  when: "{{ item }} is defined"
+  with_items:
+    - logrotate_version
+    - logrotate_scripts

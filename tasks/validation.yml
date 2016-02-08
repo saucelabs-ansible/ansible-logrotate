@@ -1,0 +1,13 @@
+---
+
+- name: ensure OS distribution is suported
+  fail:
+    msg: "The {{ ansible_distribution }} is not currently supported."
+  when: (ansible_distribution | lower) != 'ubuntu' and ansible_distribution | lower != 'debian'
+
+- name: ensure mandatory variables are set
+  fail:
+    msg="{{ item }} is a mandatory variable"
+  when: "{{ item }} is not defined"
+  with_items:
+    - logrotate_scripts

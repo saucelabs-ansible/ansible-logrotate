@@ -1,10 +1,24 @@
 ---
-- name: nickhammond.logrotate | Install logrotate
-  action: "{{ansible_pkg_mgr}} pkg=logrotate state=present"
 
-- name: nickhammond.logrotate | Setup logrotate.d scripts
+- include: debug.yml
+  when: debug | default(false)
+  tags: debug
+
+- include: validation.yml
+  tags: validation
+
+- name: ensure logrotate is installed
+  apt:
+    name="logrotate={{ logrotate_version }}"
+    state=present
+  sudo: yes
+  tags: installation
+
+- name: setup logrotate.d scripts
   template:
     src: logrotate.d.j2
     dest: /etc/logrotate.d/{{ item.name }}
+  sudo: yes
   with_items: logrotate_scripts
   when: logrotate_scripts is defined
+  tags: configuration
