@@ -1,15 +1,17 @@
 ---
+
 galaxy_info:
-  author: Nick Hammond
-  description: Role to configure logrotate scripts
+  author: Nick Hammond, Sauce Labs.
+  description: Role to setup logrotate on a server.
   license: BSD
-  min_ansible_version: 1.5
+  min_ansible_version: 1.9.4
   platforms:
-  - name: Ubuntu
-    versions:
-    - lucid
-    - precise
-    - trusty
+    - name: Ubuntu
+      versions:
+        - wily
+        - vivid
+        - trusty
+        - precise
   categories:
-  - system
+    - system
 dependencies: []
