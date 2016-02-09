@@ -74,8 +74,9 @@ logrotate_scripts:
 
 ## Author Information
 
-* [nickhammond](https://github.com/nickhammond) | [www](http://www.nickhammond.com) | [twitter](http://twitter.com/nickhammond).
+* [nickhammond](https://github.com/nickhammond) | [www](http://www.nickhammond.com) | [twitter](https://twitter.com/nickhammond)
 * [bigjust](https://github.com/bigjust)
+* [steenzout](https://github.com/steenzout) | [twitter](https:/twitter.com/steenzout)
 * [jeancornic](https://github.com/jeancornic)
 * [duhast](https://github.com/duhast)
 * [kagux](https://github.com/kagux)
