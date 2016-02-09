@@ -28,6 +28,7 @@
   with_items:
     - /var/log/nginx/options.log
     - /var/log/nginx/scripts.log
+    - /var/log/nginx/test.log
   changed_when: no
 
 - name: test | log rotation
