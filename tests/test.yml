@@ -1,7 +1,7 @@
 ---
 
 - name: logrotate tests play
-  hosts: all
+  hosts: "{{ vagrant_box }}"
   gather_facts: yes
 
   roles:
@@ -9,11 +9,14 @@
       debug: true
       logrotate_scripts:
         - name: nginx-options
-          path: /var/log/nginx/options.log
+          path:
+            - /var/log/nginx/options.log
           options:
             - daily
         - name: nginx-scripts
-          path: /var/log/nginx/scripts.log
+          path:
+            - /var/log/nginx/scripts.log
+            - /var/log/nginx/test.log
           scripts:
             postrotate: "echo test"
       tags: logrotate
