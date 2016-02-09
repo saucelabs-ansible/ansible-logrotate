@@ -25,10 +25,10 @@ None
 * **logrotate_scripts**:
   list of logrotate scripts and the directives to use for the rotation,
   each list element should have the following keys:
-    * name - The name of the script that goes into /etc/logrotate.d/
-    * path - Path to point logrotate to for the log rotation
-    * options - List of directives for logrotate, view the logrotate man page for specifics
-    * scripts - Dict of scripts for logrotate (see Example below)
+    * name: name of the script that goes into /etc/logrotate.d/
+    * path: list of paths which need log rotation
+    * options: list of directives for logrotate, view the logrotate man page for specifics
+    * scripts: dictionary of scripts for logrotate (see Example below)
 
 ```
 logrotate_scripts:
