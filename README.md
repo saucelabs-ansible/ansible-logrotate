@@ -33,7 +33,8 @@ None
 ```
 logrotate_scripts:
   - name: rails
-    path: /srv/current/log/*.log
+    path:
+      - /srv/current/log/*.log
     options:
       - weekly
       - size 25M
@@ -54,7 +55,8 @@ Setting up logrotate for additional Nginx logs, with postrotate script.
 ```
 logrotate_scripts:
   - name: nginx
-    path: /var/log/nginx/*.log
+    path:
+      - /var/log/nginx/*.log
     options:
       - weekly
       - size 25M
