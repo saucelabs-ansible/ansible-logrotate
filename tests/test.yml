@@ -18,7 +18,11 @@
             - /var/log/nginx/scripts.log
             - /var/log/nginx/test.log
           scripts:
-            postrotate: "echo test"
+            postrotate: |
+              echo 'test1'
+
+              # comment
+              echo 'test2'
       tags: logrotate
 
     - role: tests
