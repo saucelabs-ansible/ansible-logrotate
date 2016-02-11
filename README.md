@@ -66,8 +66,9 @@ logrotate_scripts:
       - delaycompress
       - copytruncate
     scripts:
-      postrotate: "[ -s /run/nginx.pid ] && kill -USR1 `cat /run/nginx.pid`"
-
+      postrotate: |
+        [test -s /run/nginx.pid ] && kill -USR1 `cat /run/nginx.pid`
+        # ability to add more lines to this section
 ```
 
 ## License

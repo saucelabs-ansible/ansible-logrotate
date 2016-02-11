@@ -12,7 +12,9 @@
 {% if item.scripts is defined -%}
 {%   for name, script in item.scripts.iteritems() %}
     {{ name }}
-        {{ script }}
+{%     for script_line in script.split('\n') %}
+        {{ script_line }}
+{%     endfor %}
     endscript
 {%   endfor %}
 {% endif %}
