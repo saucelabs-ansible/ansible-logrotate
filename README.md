@@ -53,22 +53,29 @@ None
 Setting up logrotate for additional Nginx logs, with postrotate script.
 
 ```
-logrotate_scripts:
-  - name: nginx
-    path:
-      - /var/log/nginx/*.log
-    options:
-      - weekly
-      - size 25M
-      - rotate 7
-      - missingok
-      - compress
-      - delaycompress
-      - copytruncate
-    scripts:
-      postrotate: |
-        [test -s /run/nginx.pid ] && kill -USR1 `cat /run/nginx.pid`
-        # ability to add more lines to this section
+- name: some play
+  hosts: some-group
+  gather_facts: yes
+
+  roles:
+    - role: logrotate
+      logrotate_scripts:
+        - name: nginx
+          path:
+            - /var/log/nginx/*.log
+          options:
+            - weekly
+            - size 25M
+            - rotate 7
+            - missingok
+            - compress
+            - delaycompress
+            - copytruncate
+          scripts:
+            postrotate: |
+              [test -s /run/nginx.pid ] && kill -USR1 `cat /run/nginx.pid`
+              # ability to add more lines to this section
+      tags: logrotate
 ```
 
 ## License
